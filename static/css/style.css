@@ -1,0 +1,70 @@
+body {
+    font-family: 'Prompt', sans-serif;
+    background: linear-gradient(45deg, #9795f0, #fbc8d4);
+    color: white;
+}
+
+/*---------------------------------- Navigation */
+
+.nav-bar-bg {
+    background-color: transparent;
+    border-bottom: transparent;
+}
+
+.nav-bar-bg h3 {
+    margin: 5px;
+    font-weight: 700;
+}
+
+.nav-bar-bg a {
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.sidenav {
+    background-color: #9795f0e0;
+}
+
+.sidenav h5 {
+    margin-left: 30px;
+}
+
+.sidenav li>a {
+    font-size: 18px;
+    color: White;
+    font-weight: 300;
+}
+
+.nav-btn:hover {
+    border-bottom: 2px solid #9795F0;
+    height: 64px;
+}
+
+.sidenav li>a:hover {
+    color: #F794A4;
+    height: 50px;
+}
+
+
+.background-1 {
+    height: 120vh;
+    width: 100%;
+}
+
+/*---------------------------------- Footer */
+
+.footer {
+    background: transparent;
+    color: white;
+    font-weight: 400;
+}
+
+footer a {
+    color: white;
+}
+
+footer a:hover {
+    color: #F794A4;
+    border-bottom: 2px solid #F794A4;
+}
