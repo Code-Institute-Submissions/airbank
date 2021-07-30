@@ -3,13 +3,49 @@
 
 
 {% block content %}
-<div class="background-1">
-    <h1>Welcome to AirBank.</h1>
-    <h2>Welcome to AirBank.</h2>
-    <h3>Welcome to AirBank.</h3>
-    <h4>Welcome to AirBank.</h4>
-    <h5>Welcome to AirBank.</h5>
-    <h6>Welcome to AirBank.</h6>
-    <h6>Welcome to AirBank.</h6>
+
+<div class="hero-image" data-parallax-factor="1.7">
+    <h1 class="hero-text no-select">Send money with ease.
+        <div class="mini-text-hero no-select">
+            <p>Transfer Money Safely</p>
+        </div>
+        {% if request.user.is_authenticated %}
+        <a class="btn-large hero-button" href="#">To your Wallet</a></h1>
+    {% else %}
+    <a class="btn-large hero-button" href="{% url 'account_signup' %}">Create Account</a>
+    <a class="btn-large hero-button-2" href="{% url 'account_login' %}">Login</a></h1>
+    {% endif %}
 </div>
+</div>
+<div class="section home-box z-depth-3 no-select">
+    <div class="row container">
+        <h2 class="header"><i class="far fa-credit-card"></i>How do I start?</h2>
+        <p class="font-2">Top up your AirBank account with any credit card. Then share the
+            encrypted AirBank link that gets created instantly.
+        </p>
+    </div>
+</div>
+<div class="section home-box z-depth-4 no-select">
+    <div class="row container">
+        <h2 class="header"><i class="fas fa-user-shield"></i>Is it safe?</h2>
+        <p class="font-2">The recieving person will have to enter the 4 digit password you set, to be able to extract the money in 
+            a Airbank account. Receiver will never know your bankdetails, and you will not know theirs. Safer. Better. 
+        </p>
+    </div>
+</div>
+<div class="section home-box z-depth-4 no-select">
+    <div class="row container">
+        <h2 class="header"><i class="fas fa-meteor"></i>Are you in a rush?</h2>
+        <p class="font-2">An Airbank transaction is the fastest way of transfering money to anyone in the world.
+        </p>
+    </div>
+</div>
+<div class="container z-depth-1 no-select">
+    <div class="image-box">
+        <div class="action-text"><h2>Get your AirBank Card!</h2></div>
+        <img class="home-image z-depth-1" src="static/img/heroimg.jpg" 
+        alt="Image of Airbank containing Airbank App and card">
+    </div>
+</div>
+
 {% endblock %}
