@@ -107,7 +107,7 @@ footer a:hover {
 /*---------------------------------- Home */
 
 .hero-image {
-    background-image: url("/static/img/heroimgairbank2.png");
+    background-image: url("/static/img/heroimg.png");
     background-attachment: fixed;
     background-position: left;
     background-repeat: no-repeat;
@@ -125,7 +125,7 @@ footer a:hover {
 
 .hero-text {
     font-weight: 600;
-    margin: 100px 0px 40px 90px;
+    margin: 90px 0px 40px 25px;
 }
 
 
@@ -209,4 +209,12 @@ footer a:hover {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+
+
+@media (min-width: 1250px) {
+    .hero-text {
+        margin: 100px 0px 40px 90px;
+    }
 }
