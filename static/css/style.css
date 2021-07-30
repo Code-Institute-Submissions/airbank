@@ -211,8 +211,6 @@ footer a:hover {
     user-select: none;
 }
 
-
-
 @media (min-width: 1250px) {
     .hero-text {
         margin: 100px 0px 40px 90px;
