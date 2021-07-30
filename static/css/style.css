@@ -68,3 +68,29 @@ footer a:hover {
     color: #F794A4;
     border-bottom: 2px solid #F794A4;
 }
+
+/*---------------------------------- Logout */
+
+.modal {
+    height: 150px;
+    text-align: center;
+}
+
+.modal-form-row {
+    margin-bottom: 0px;
+}
+
+.log-out h5 {
+    color: black;
+    text-align: center;
+    margin: 20px;
+}
+
+.log-out-button {
+    margin: 20px;
+    background-color: #9795F0;
+}
+
+.log-out-button:hover {
+    background-color: #F794A4;
+}

@@ -56,14 +56,16 @@
       <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
       <ul class="right hide-on-med-and-down">
         <li><a class="nav-btn" href="#">Home</a></li>
-        <li><a class="nav-btn" href="#">Wallet</a></li>
-        <li><a class="nav-btn" href="#">Register</a></li>
-        <li><a class="nav-btn" href="">Login</a></li>
-        <li><a class="nav-btn" href="">Logout</a></li>
+        {% if request.user.is_authenticated %}
+        <li><a class="nav-btn" href="">Wallet</a></li>
+        <li><a data-target="logout" class="modal-trigger nav-btn">Logout</a></li>
+        {% else %}
+        <li><a class="nav-btn" href="{% url 'account_signup' %}">Register</a></li>
+        <li><a class="nav-btn" href="{% url 'account_login' %}">Login</a></li>
+        {% endif %}
       </ul>
     </div>
   </nav>
-
   <!-- Mobile Side Navbar -->
   <ul class="sidenav nav-bar-bg" id="mobile-demo" data-target="mobile-demo">
     <div>
@@ -72,12 +74,25 @@
       </a>
     </div>
     <li><a class="nav-btn" href="#">Home</a></li>
-    <li><a class="nav-btn" href="#">Wallet</a></li>
-    <li><a class="nav-btn" href="#">Register</a></li>
-    <li><a class="nav-btn" href="#">Login</a></li>
-    <li><a class="nav-btn" href="#">Logout</a></li>
+    {% if request.user.is_authenticated %}
+    <li><a class="nav-btn" href="">Wallet</a></li>
+    <li><a data-target="logout" class="modal-trigger nav-btn">Logout</a></li>
+    {% else %}
+    <li><a class="nav-btn" href="{% url 'account_signup' %}">Register</a></li>
+    <li><a href="{% url 'account_login' %}" class="dropdown-item">Login</a></li>
+    {% endif %}
   </ul>
   </header>
+  <!-- Modal Structure -->
+  <div id="logout" class="modal">
+    <div class="modal-contents log-out">
+      <h5>Are you sure that you want to Logout?</h5>
+      <form method="post" action="{% url 'account_logout' %}">
+        {% csrf_token %}
+        <button class="btn log-out-button" type="submit">Logout</button>
+      </form>
+    </div>
+  </div>
 
   {% if messages %}
   <div class="message-container"></div>
@@ -103,11 +118,14 @@
         <div class="col l4 offset-l2 s12">
           <h5 class="white-text">Links</h5>
           <ul>
-            <li><a class="nav-btn" href="#!">Home</a></li>
-            <li><a class="nav-btn" href="#!">Wallet</a></li>
-            <li><a class="nav-btn" href="#!">Register</a></li>
-            <li><a class="nav-btn" href="#!">Login</a></li>
-            <li><a class="nav-btn" href="#!">Logout</a></li>
+            <li><a class="nav-btn" href="#">Home</a></li>
+            {% if request.user.is_authenticated %}
+            <li><a class="nav-btn" href="">Wallet</a></li>
+            <li><a data-target="logout" class="modal-trigger nav-btn">Logout</a></li>
+            {% else %}
+            <li><a class="nav-btn" href="">Register</a></li>
+            <li><a class="nav-btn" href="">Login</a></li>
+            {% endif %}
           </ul>
         </div>
       </div>
